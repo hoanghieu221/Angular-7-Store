@@ -1,0 +1,119 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <form #formAdd="ngForm" (ngSubmit)="onSubmit(formAdd)">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+              <button type="button" id="closeModal" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="row">
+                
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          {{nameListCategory}}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" 
+                          *ngFor="let item of listCategory" 
+                          (click)="onListCategory(item.name,item.id);" 
+                                >{{item.name}}</a>
+                        </div>
+                      </div>
+    
+                </div>
+
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <div class="dropdown">
+                          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{nameCategory}}
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" 
+                            *ngFor="let item of category" 
+                            (click)="onCategory(item.name);" 
+                            routerLink="/ListCategory/{{idListCategory}}/category/{{item.id}}/fashion/productManager/manager"
+                                  >{{item.name}}</a>
+                          </div>
+                        </div>
+                  </div>
+                
+              </div>
+
+             
+
+                
+  
+
+              <div class="form-group">
+                <label for="">Name</label>
+                <input type="text"
+                  class="form-control" 
+                  name="name" 
+                  id="" 
+                  aria-describedby="helpId" 
+                  [(ngModel)]="newProduct.name"
+                  #productName = "ngModel"
+                  required
+                  minlength="6"
+                  placeholder="Name" />
+              </div>
+              <div class="alert alert-danger" *ngIf="productName.dirty && productName.errors?.required" role="alert">
+                  <small id="helpId" class="form-text text-muted">Name is required.</small>
+              </div>
+              <div class="alert alert-danger" *ngIf="productName.dirty && productName.errors?.minlength" role="alert">
+                  <small id="helpId" class="form-text text-muted">Name must be at least 6 characters long.</small>
+              </div>
+              <div class="form-group">
+                  <label for="">Price</label>
+                  <input type="number"
+                    class="form-control" 
+                    name="price" 
+                    id="" 
+                    aria-describedby="helpId" 
+                    [(ngModel)]="newProduct.price"
+                    #productPrice = "ngModel"
+                    required
+                    pattern="[0-9]+(\\.[0-9][0-9]?)?"
+                    placeholder="Price" />
+                </div>
+                <div class="alert alert-danger" *ngIf="productPrice.dirty && productPrice.errors?.required" role="alert">
+                    <small id="helpId" class="form-text text-muted">Price is required.</small>
+                </div>
+                <div class="alert alert-danger" *ngIf="productPrice.dirty && productPrice.errors?.pattern" role="alert">
+                    <small id="helpId" class="form-text text-muted">
+                        Must not be less than 0</small>
+                </div>
+                      <div class="custom-control custom-radio">
+                          <input type="radio" id="customRadio1"  
+                          [(ngModel)]="newProduct.status"
+                          [value] = 'true' 
+                          name="status" 
+                          class="custom-control-input">
+                          <label class="custom-control-label" for="customRadio1">Stocking</label>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2"  
+                            [(ngModel)]="newProduct.status"
+                            [value] = 'false' 
+                            name="status" 
+                            class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Out of stock</label>
+                          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-outline-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+  </form>
+  
+</div>

@@ -1,0 +1,42 @@
+<div class="container"  >
+  <app-product-header></app-product-header>
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <img src="assets/IMG/bg-header-product.jpg"
+        class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+        id="bg-header-product" alt="">
+    </div>
+
+  </div>
+
+  <div class="row" style="margin-top:20px;">
+    
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <img src="{{detail.img}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+    </div>
+    
+    
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item" aria-current="page">{{nameListCategory}}</li>
+              <li class="breadcrumb-item" aria-current="page">{{nameCategory}}</li>
+            </ol>
+          </nav>
+      <label for="">Name <h4>{{detail.name}}</h4></label>
+      <label for="">Price <h4>{{detail.price  | currency: "VND" }}</h4></label>
+      <label for="">Status <h4>{{detail.status ? 'Stocking' : 'Out of stock'}}</h4></label>
+      <button type="button" class="btn btn-outline-dark" (click) = "goBack()" >Back</button>
+    </div>
+    
+  </div>
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

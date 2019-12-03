@@ -1,0 +1,53 @@
+<div class="row">
+
+    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3"*ngFor="let listCate of listCategory">
+      <!-- Category - Man -->
+      <div class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" (click)="getCategory(listCate.id)" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{listCate.name}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item"  *ngFor="let item of cate"  routerLink="/ListCategory/{{listCate.id}}/category/{{item.id}}/fashion">{{item.name}}</a>
+        </div>
+      </div>
+      <!-- /Category - Man -->
+    </div>
+
+<!-- 
+    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Woman
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" *ngFor="let item of cate" routerLink="/category/{{item.id}}/fashion" >{{item.name}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Iron fever
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item"  *ngFor="let item of cate" routerLink="/category/{{item.id}}/fashion">{{item.name}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Hashaghi
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" *ngFor="let item of cate"  routerLink="/category/{{item.id}}/fashion">{{item.name}}</a>
+        </div>
+      </div>
+    </div> -->
+  </div>

@@ -1,0 +1,67 @@
+.translate img {
+    width: 16px;
+    height: 10px;
+}
+
+ol.breadcrumb {
+    background-color: white;
+    padding-top:10px;
+    
+}
+
+ol.breadcrumb a {
+    color: black;
+}
+
+.icon {
+    padding-top:10px;
+    margin-left: 20px;
+}
+
+.col-xs-12.col-sm-12.col-md-12.col-lg-12.translate {
+    padding-top: 10px;
+    text-align: left;
+}
+
+.translate{
+    font-size: 14px;
+}
+
+.breadcrumb-item{
+    font-size: 14px;
+}
+
+ol.breadcrumb {
+    display: inline-flex;
+}
+
+input.form-control.mr-sm-2 {
+    border-radius: 0px;
+}
+
+button.btn.btn-outline-dark.my-2.my-sm-0 {
+    border-radius: 0px;
+}
+
+i.fas.fa-shopping-cart {font-size: 40px;float: right;
+}
+
+.col-xs-12.col-sm-12.col-md-12.col-lg-12.icon-fb-ins-twt {
+    text-align: right;
+}
+
+
+.icon-cart {
+    float: right;
+    background: none;
+    border: none;
+}
+
+
+a.badge.badge-primary {
+    color: #000;
+    font-family: Segoe UI;
+    font-size: 10pt;
+    font-weight: unset;
+    background-color: white;
+}

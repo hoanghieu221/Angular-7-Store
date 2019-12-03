@@ -1,0 +1,22 @@
+.card.text-left {
+    margin-top: 10px;
+    border-radius: 0px;
+}
+
+
+button#btnCart {
+    background: white;
+    border: solid 2px black;
+    border-radius: 0px;
+}
+
+button#btnCart:hover {
+    color: white;
+    background: black;
+    transition: 0.9s;
+}
+
+
+img#bg-header-product {
+    height: 300px;
+}

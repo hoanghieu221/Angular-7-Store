@@ -1,0 +1,21 @@
+a {
+    color: #999999;
+    transition: margin-left 1s;
+}
+ 
+.list1 > li:hover > a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    margin-left: 40px;
+}
+
+.list2  a:hover{
+    text-decoration: none;
+}
+
+
+p {
+    color: #999999;
+}
+

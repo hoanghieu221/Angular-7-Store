@@ -1,0 +1,47 @@
+.post-1 {
+    background-image: url('assets/IMG/post-1.jpg');
+    height: 255px;
+    color: white;
+   
+}
+
+.post-2 {
+    background-image: url('assets/IMG/post-2.jpg');
+    height: 255px;
+    padding-left: 10px;
+    color: white;
+}
+
+.post-3 {
+    background-image: url('assets/IMG/post-3.jpg');
+    height: 255px;
+    padding-left: 10px;
+    color: white;
+}
+
+a.comment {
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+a.comment:hover{
+    color: #999;
+}
+
+.subPost {
+    padding-top: 190px;
+}
+
+.subPost1 {
+    padding-top: 191px;
+    padding-left: 10px;
+}
+
+h4 {
+    font-size: 11pt;
+}
+
+i.fas.fa-calendar-alt.calendar {
+    margin-right: 10px;
+}

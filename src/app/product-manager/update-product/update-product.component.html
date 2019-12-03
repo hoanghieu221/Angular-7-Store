@@ -1,0 +1,106 @@
+
+
+
+<div class="container">
+    <app-product-header></app-product-header>
+    <div class="row">
+  
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <img src="assets/IMG/bg-header-product.jpg"
+          class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+          id="bg-header-product" alt="">
+      </div>
+  
+    </div>
+  
+  
+    
+    <div class="row">
+  
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Dropdown -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-2">
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item" aria-current="page">{{nameListCategory}}</li>
+                    <li class="breadcrumb-item" aria-current="page">{{nameCategory}}</li>
+                  </ol>
+                </nav>
+          </div>
+  
+
+           
+  
+        </div>
+    
+        
+        <div class="row">
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <form #formUpdate="ngForm" (ngSubmit)="onSubmit(formUpdate)">
+          
+                <div class="form-group">
+                  <label for="">Name</label>
+                  <input type="text" 
+                  value="{{product.name}}" 
+                  class="form-control" 
+                  name="name" 
+                  id="" 
+                  aria-describedby="helpId"
+                    [(ngModel)]="newProduct.name" #productName="ngModel" required minlength="6" placeholder="Name" />
+                </div>
+                <div class="alert alert-danger" *ngIf="productName.dirty && productName.errors?.required" role="alert">
+                  <small id="helpId" class="form-text text-muted">Name is required.</small>
+                </div>
+                <div class="alert alert-danger" *ngIf="productName.dirty && productName.errors?.minlength" role="alert">
+                  <small id="helpId" class="form-text text-muted">Name must be at least 6 characters long.</small>
+                </div>
+                <div class="form-group">
+                  <label for="">Price</label>
+                  <input type="number" value="{{product.price}}"  class="form-control" name="price" id="" aria-describedby="helpId"
+                    [(ngModel)]="newProduct.price" #productPrice="ngModel" required pattern="[0-9]+(\\.[0-9][0-9]?)?"
+                    placeholder="Price" />
+                </div>
+                <div class="alert alert-danger" *ngIf="productPrice.dirty && productPrice.errors?.required" role="alert">
+                  <small id="helpId" class="form-text text-muted">Price is required.</small>
+                </div>
+                <div class="alert alert-danger" *ngIf="productPrice.dirty && productPrice.errors?.pattern" role="alert">
+                  <small id="helpId" class="form-text text-muted">
+                    Must not be less than 0</small>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio1" [(ngModel)]="newProduct.status" [value]='true' [checked]= "stocking"  name="status"
+                    class="custom-control-input">
+                  <label class="custom-control-label" for="customRadio1">Stocking</label>
+                </div>
+          
+                <div class="custom-control custom-radio">
+                  <input type="radio"   id="customRadio2" [(ngModel)]="newProduct.status" [value]='false' [checked] = "outStocking" name="status"
+                    class="custom-control-input">
+                  <label class="custom-control-label" for="customRadio2">Out of stock</label>
+                </div>
+
+                <button type="submit" class="btn btn-outline-dark">Save changes</button>
+                <button type="submit" (click) = 'goBack();' class="btn btn-outline-primary ml-2">Back</button>
+              </form>
+            </div>
+          </div>
+        <!-- /Table -->
+      </div>
+  
+    </div>
+  
+  
+    <!-- footer -->
+    <div class="row">
+  
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <app-footer></app-footer>
+      </div>
+  
+    </div>
+  
+    <!-- /footer -->
+  </div>

@@ -1,0 +1,28 @@
+.row.slide {
+    margin-top: 40px;
+}
+
+
+.col-xs-12.col-sm-12.col-md-12.col-lg-12.text-center.carousel-content {
+    background: #333;
+    color: white;
+    height: 237px;
+}
+
+
+.carousel-content h3 {
+    margin-top: 55px;
+}
+
+
+a#btn-View {
+    border: solid;
+    border-radius: 0px;
+}
+
+
+.col-xs-12.col-sm-12.col-md-12.col-lg-12.sub-img {
+    padding: 0px;
+    margin-bottom: 11px;
+}
+

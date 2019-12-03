@@ -1,0 +1,31 @@
+<div class="container" style="margin-top:20px;" >
+  <app-product-header></app-product-header>
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <img src="assets/IMG/bg-header-product.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" id="bg-header-product" alt="">
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"  *ngFor="let item of listProduct">
+      
+        <div class="card text-left" >
+            <img class="card-img-top" [src]="item.img" alt="Anh khong ton tai" >
+            <div class="card-body text-center">
+                <h5 class="card-title d-flex justify-content-center" >{{item.name}}</h5>
+                <p class="card-text price-sale   text-center">{{item.price | currency: "VND" }}  </p>
+                <button type="button" class="btn btn-light text-center" routerLink="/ListCategory/{{listId}}/category/{{cateId}}/fashion/{{item.id}}" id="btnCart" >DETAIL</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <app-footer></app-footer>
+    </div>
+  </div>
+  <!-- /footer -->
+</div>
